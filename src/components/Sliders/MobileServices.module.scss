@@ -25,11 +25,12 @@
       max-width: 560px;
       height: auto;
       position: relative;
-      background:  var(--slider-bg-image)no-repeat;
+      background:  var(--slider-bg-image) no-repeat;
       background-size: cover;
       padding: 30px 20px;
       border-radius: 20px;
       display: flex;
+      flex-direction: column;
       img {
         width: 100%;
         height: 100%;

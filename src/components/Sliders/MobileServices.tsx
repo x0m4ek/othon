@@ -10,6 +10,8 @@ import Slider from "../Slider/Slider.tsx";
 import {AnimatePresence, motion} from "framer-motion";
 import { useMediaQuery } from 'react-responsive';
 import Arrow from "../Arrow/Arrow.tsx";
+import arrowNext from "../../assets/images/orangeArrow.png";
+import arrowBack from "../../assets/images/backArrow.png"
 
 type Props = {
     name: string;
@@ -141,6 +143,7 @@ const MobileServices: FC = () => {
     return (
         <div className={styles.services}>
             <p>Services</p>
+
             {data_for_cat.map((cat, index) => {
                 const cardStyles = {
                     '--slider-bg-image': `url(${cat.img})`,
@@ -154,6 +157,10 @@ const MobileServices: FC = () => {
                                 isActive={cat.title === catSelected}
                                 onClick={() => handleCatClick(cat.title, index)}
                             />
+                            <div className={styles.nav}>
+                                <img src={arrowBack} alt="Arrow"/>
+                                <img src={arrowNext} alt="Arrow"/>
+                            </div>
                         </div>
                         <div className={styles.slider} style={cardStyles}>
 
