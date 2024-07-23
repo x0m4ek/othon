@@ -1,0 +1,146 @@
+.footer {
+  border-radius: 20px;
+  background: url("../../assets/images/footer.png") no-repeat;
+  padding: 55px;
+  background-size: cover;
+  width: calc(100% - 40px);
+  margin: 20px auto;
+
+  .copyright {
+    display: flex;
+    color: #fff;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    .socials {
+      display: flex;
+      gap: 24px;
+      .social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        width: 29px;
+        height: 29px;
+        border-radius: 100%;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover {
+          background: #F2683C;
+        }
+      }
+    }
+    p {
+      font-size: 14px;
+    }
+    span {
+      display: flex;
+      align-self: center;
+      gap: 7px;
+      font-size: 14px;
+      font-weight: 100;
+      p {
+        font-weight: 600;
+      }
+    }
+  }
+  .wrapper_blocks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 200px;
+  }
+  .blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 90px;
+    .special {
+      flex-direction: row !important;
+      max-width: fit-content !important;
+      width: 100%;
+      .block:nth-child(2) {
+        span {
+          opacity: 0;
+        }
+      }
+    }
+    .lastblock {
+      max-width: none !important;
+    }
+    .block {
+      color: #fff;
+      max-width: 180px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      span {
+        font-size: 20px;
+
+      }
+      small {
+        font-size: 16px;
+        //opacity: 0.9;
+        font-weight: 100;
+        p {
+          font-weight: 400;
+        }
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+.top_sec {
+  display: flex;
+  justify-content: space-between;
+  .contact {
+    h3 {
+      font-size: 34px;
+      color: #fff;
+    }
+
+    .inputs {
+      display: flex;
+      max-width: 724px;
+      flex-wrap: wrap;
+      gap: 14px;
+
+      input {
+        min-width: 355px;
+        flex-grow: 1;
+        color: #18306C;
+        outline: none;
+        border: none;
+        border-radius: 12px;
+        padding: 13px 16px;
+      }
+    }
+
+    .send {
+      border-radius: 13px;
+      border: 1px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+      color: #fff;
+      font-size: 20px;
+      padding: 18px;
+      max-width: 724px;
+      margin-top: 26px;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background: #fff;
+        color: #18306C;
+      }
+
+      img {
+        width: 20px;
+      }
+    }
+  }
+}
+}

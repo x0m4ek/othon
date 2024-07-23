@@ -1,0 +1,42 @@
+.about {
+  display: flex;
+  margin-top: 100px;
+  border-top: 1px solid rgba(#18306C, 0.4);
+ .img {
+   flex: 1;
+
+   p {
+     font-size: 24px;
+     color: #F2683C;
+     padding: 60px 0  ;
+   }
+ }
+  .text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .block {
+      padding: 60px 0px;
+      border-bottom: 1px solid rgba(#18306C, 0.4);;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      p {
+        font-size: 34px;
+        color: #18306C;
+
+        font-weight: 400;
+      }
+      span {
+        color: #18306C;
+
+        font-weight: 400;
+        font-size: 22px;
+      }
+    }
+    .block:last-child {
+      border-bottom: none;
+    }
+  }
+}

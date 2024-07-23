@@ -1,0 +1,20 @@
+.card_wrapper {
+  background: #18306C;
+  border-radius: 20px;
+  padding: 35px;
+  max-width: 560px;
+  p {
+    font-size: 24px;
+    color: #fff;
+  }
+  .details {
+    padding-top: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      width: 53px;
+      height: 53px;
+    }
+  }
+}

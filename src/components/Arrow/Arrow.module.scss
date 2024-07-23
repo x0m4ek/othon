@@ -1,0 +1,31 @@
+.arrow {
+  background: #fff;
+  border-radius: 100%;
+  width: 53px;
+  min-width: 53px;
+  min-height: 53px;
+  display: flex;
+  height: 53px;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+
+.svgArrow {
+  transition: fill 0.3s ease;
+}
+
+
+  &:hover {
+    background: #F2683C;
+    .svgArrow {
+        path {
+          fill: #fff; /* Колір при наведенні */
+        }
+    }
+  }
+  img {
+    width: 20px;
+  }
+}
