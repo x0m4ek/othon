@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState, useRef } from 'react';
+import React, { FC, useEffect, useState, useRef, useCallback} from 'react';
 import styles from "./MobileServices.module.scss";
 import img1 from "../../assets/images/service1.png";
 import img2 from "../../assets/images/service2.png";
@@ -12,6 +12,15 @@ import { useMediaQuery } from 'react-responsive';
 import Arrow from "../Arrow/Arrow.tsx";
 import arrowNext from "../../assets/images/orangeArrow.png";
 import arrowBack from "../../assets/images/backArrow.png"
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+
+// import required modules
+import { Navigation } from 'swiper/modules';
 
 type Props = {
     name: string;
@@ -119,7 +128,6 @@ const MobileServices: FC = () => {
     ];
 
 
-    let images = [img1, img2, img3, img5, img1, img6, img1];
 
     const handleCatClick = (cat: string, index: number) => {
         if (isTransitioning.current || cat === catSelected) return; // Якщо в процесі переходу або та сама категорія, нічого не робимо
@@ -131,25 +139,42 @@ const MobileServices: FC = () => {
         }
         setPrevCatIndex(index);
 
-        // Встановлюємо прапорець переходу на true і збиваємо після завершення анімації
+
         isTransitioning.current = true;
         setTimeout(() => {
             isTransitioning.current = false;
         }, 500); // Тривалість повинна співпадати з анімацією
     };
+        const swiperRef  = useRef()
+    const handlePrev = useCallback(() => {
+        if (!swiperRef.current) return;
+        swiperRef.current.swiper.slidePrev();
+    }, []);
 
+    const handleNext = useCallback(() => {
+        if (!swiperRef.current) return;
+        swiperRef.current.swiper.slideNext();
+    }, []);
 
 
     return (
         <div className={styles.services}>
             <p>Services</p>
-
+            <Swiper
+                ref={swiperRef}
+                navigation={true}
+                // modules={[Navigation]}
+                slidesPerView={1}
+                // spaceBetween={10}
+                onSlideChange={(swiper) => setSelectedCat(cats[swiper.activeIndex])}
+            >
             {data_for_cat.map((cat, index) => {
                 const cardStyles = {
                     '--slider-bg-image': `url(${cat.img})`,
                 } as React.CSSProperties;
 
                 return (
+                    <SwiperSlide>
                     <div className={styles.wrapper} key={index}>
                         <div className={styles.options}>
                             <Cat
@@ -158,7 +183,7 @@ const MobileServices: FC = () => {
                                 onClick={() => handleCatClick(cat.title, index)}
                             />
                             <div className={styles.nav}>
-                                <img src={arrowBack} alt="Arrow"/>
+                                <img src={arrowBack} alt="Arrow" onClick={() => handleNext()}/>
                                 <img src={arrowNext} alt="Arrow"/>
                             </div>
                         </div>
@@ -170,8 +195,9 @@ const MobileServices: FC = () => {
                             </div>
                         </div>
                     </div>
+                    </SwiperSlide>
                 );
-            })}
+            })}</Swiper>
         </div>
     );
 

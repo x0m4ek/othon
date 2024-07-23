@@ -46,7 +46,20 @@
     }
     .options {
       transition: 0.3s;
-      width: 50%;
+      width: 100%;
+      display: flex;justify-content: space-between;
+      .nav {
+        flex:1;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-end;
+        img {
+          width: 20px;
+          height: 20px;
+          min-width: 20px;
+        }
+      }
       .active {
         color: #18306C;
         opacity: 1;
