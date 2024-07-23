@@ -45,3 +45,10 @@
     }
   }
 }
+
+
+@media screen and (max-width:600px) {
+  .card_wrapper {
+    min-width: -webkit-fill-available;
+  }
+}

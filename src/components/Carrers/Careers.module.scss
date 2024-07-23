@@ -3,7 +3,7 @@
   margin: 0 auto;
   background: #18306C;
   border-radius: 20px;
-  padding: 35px 50px;
+  padding: 35px 0px;
   margin-top: 100px;
 
   p {
@@ -145,6 +145,7 @@
 }
 @media screen and (max-width:1000px) {
   .carrer {
+    width: 100%;
     .blocks {
       flex-direction: column;
 
@@ -160,6 +161,21 @@
           img {
             border-radius: 20px;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:600px) {
+  .carrer {
+    .blocks {
+      .right {
+        p {
+          font-size: 16px;
+        }
+        .wrapper {
+          padding: 20px;
         }
       }
     }

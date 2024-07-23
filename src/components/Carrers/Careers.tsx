@@ -8,6 +8,8 @@ const Careers = () => {
     return (
         <>
             <div className={styles.carrer}>
+                <div className="conteiner">
+
                 <p>
                     Careers
                 </p>
@@ -55,6 +57,7 @@ const Careers = () => {
 
                     </div>
                 </div>
+            </div>
             </div>
         </>
     );

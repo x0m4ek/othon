@@ -160,44 +160,50 @@ const MobileServices: FC = () => {
     return (
         <div className={styles.services}>
             <p>Services</p>
+
+
+            <div className={styles.options}>
+                <Cat
+                    name={catSelected}
+                    isActive={true}
+                />
+                <div className={styles.nav}>
+                    <img src={arrowBack} alt="Arrow" onClick={() => handlePrev()}/>
+                    <img src={arrowNext} alt="Arrow" onClick={() => handleNext()}/>
+                </div>
+            </div>
+
             <Swiper
                 ref={swiperRef}
-                navigation={true}
+
                 // modules={[Navigation]}
                 slidesPerView={1}
-                // spaceBetween={10}
+                spaceBetween={10}
                 onSlideChange={(swiper) => setSelectedCat(cats[swiper.activeIndex])}
+                style={{alignItems: "center"}}
             >
-            {data_for_cat.map((cat, index) => {
-                const cardStyles = {
-                    '--slider-bg-image': `url(${cat.img})`,
-                } as React.CSSProperties;
+                {data_for_cat.map((cat, index) => {
+                    const cardStyles = {
+                        '--slider-bg-image': `url(${cat.img})`,
+                    } as React.CSSProperties;
 
-                return (
-                    <SwiperSlide>
-                    <div className={styles.wrapper} key={index}>
-                        <div className={styles.options}>
-                            <Cat
-                                name={cat.title}
-                                isActive={cat.title === catSelected}
-                                onClick={() => handleCatClick(cat.title, index)}
-                            />
-                            <div className={styles.nav}>
-                                <img src={arrowBack} alt="Arrow" onClick={() => handleNext()}/>
-                                <img src={arrowNext} alt="Arrow"/>
-                            </div>
-                        </div>
-                        <div className={styles.slider} style={cardStyles}>
+                    return (
 
-                            <p>{cat.text}</p>
-                            <div className={styles.button}>
-                                <Arrow />
-                            </div>
+                        <div className={styles.wrapper} key={index}>
+
+                            <SwiperSlide className={styles.swiper_slide}>
+                                <div className={styles.slider} style={cardStyles}>
+
+                                    <p>{cat.text}</p>
+                                    <div className={styles.button}>
+                                        <Arrow/>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
                         </div>
-                    </div>
-                    </SwiperSlide>
-                );
-            })}</Swiper>
+
+                    );
+                })}</Swiper>
         </div>
     );
 

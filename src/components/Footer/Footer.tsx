@@ -7,6 +7,9 @@ const Footer = () => {
     return (
         <>
             <div className={styles.footer}>
+                <div className="conteiner">
+
+
                 <div className={styles.top_sec}>
 
 
@@ -170,6 +173,7 @@ const Footer = () => {
 
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </>
